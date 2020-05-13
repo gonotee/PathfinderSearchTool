@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ databaseResult[0][0] }}</h1>
+<h2> {{ databaseResult[0][1] }}</h2>
+<div class="tb4">Level {{databaseResult[0][3]}}</div>
+{% set tag_list = databaseResult[0][6].split(',') %}
+{% for tags in tag_list %}
+<div class="tb5">{{ tags | regex_replace ("[^A-Za-z0-9]","") }}</div>
+{% endfor %}
+<div id="containerIntro" style="clear: both">
+    <h3>Actions:</h3>
+    <p>{{ databaseResult[0][4] }}<br></p>
+    <h3>Components:</h3>
+    <p>{{ databaseResult[0][5] }}<br></p>
+    <h3>Range:</h3>
+    <p>{{ databaseResult[0][7] }}<br></p>
+    <h3>Duration:</h3>
+    <p>{{ databaseResult[0][8] }}<br></p>
+    <h3>Target:</h3>
+    <p>{{ databaseResult[0][9] }}<br></p>
+    <h3>Traditions:</h3>
+    <p>{{ databaseResult[0][10] }}<br></p>
+    <h3>Description:</h3>
+    <p>{{ databaseResult[0][2] }}</p>
+</div>
+{% endblock %}

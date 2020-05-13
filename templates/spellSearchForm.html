@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2> Spell Search</h2>
+<form action = "" method = "post">
+   <p>
+       {{form.name.label}} <br>
+       {{form.name(size=30)}}
+   </p>
+    <p>
+        {{form.level.label}} <br>
+       {{form.level(size=30)}}
+    </p>
+    <p>
+        {{form.description.label}} <br>
+       {{form.description(size=30)}}
+    </p>
+    <p>
+        {{form.actions.label}} <br>
+       {{form.actions(size=30)}}
+    </p>
+    <p>
+        {{form.traits.label}} <br>
+       {{form.traits(size=30)}}
+    </p>
+    <p>
+        {{form.range.label}} <br>
+       {{form.range(size=30)}}
+    </p>
+    <p>
+        {{form.duration.label}} <br>
+       {{form.duration(size=30)}}
+    </p>
+    <p>
+        {{form.target.label}} <br>
+       {{form.target(size=30)}}
+    </p>
+    <p>
+        {{form.tradition.label}} <br>
+       {{form.tradition(size=30)}}
+    </p>
+    <p>
+        {{form.submit()}}
+    </p>
+</form>
+
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="sidebar">
+    <div class="Rtable Rtable--2cols Rtable--collapse">
+        {% for key,value in formResult.items() %}
+        <div class="Rtable-cell Rtable-cell--head"><h3>{{key}}</h3></div>
+        <div class="Rtable-cell">{{value}}</div>
+        {% endfor %}
+    </div>
+</div>
+<div class="content">
+    <div class="Rtable Rtable--3cols Rtable--collapse">
+
+        {% for row in databaseResult %}
+        {% set dynamic_link = '/spellResult/%s'%row[0]|urlencode %}
+        <div class="Rtable-cell Rtable-cell--head"><h3><a href={{dynamic_link}}>{{row[0]}}</a></h3></div>
+        <div class="Rtable-cell">{{row[3]}}</div>
+        <div class="Rtable-cell">{{row[10]}}</div>
+        {% endfor %}
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}
+
